@@ -1,10 +1,10 @@
 import { TextFieldProps } from '@design-system/form-fields/text-field/types.ts'
 import styles from '../_layout/Layout.module.scss'
 import classNames from 'classnames'
-import { icons } from '@design-system/icon/icons.tsx'
 import { forwardRef, useEffect, useRef, useState } from 'react'
 import { FormFieldLayout } from '@design-system/form-fields/_layout'
 import { Icon } from '@design-system/icon'
+import { icons } from '@design-system/icon/icons.tsx';
 
 const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
   (
@@ -67,8 +67,10 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
         <>
           {/* PREFIX  test*/}
           {!inputProps.hidden && !!prefixIcon && (
-            <span ref={prefixRef} data-testid="prefix" className={classNames(styles.prefix, { [prefix!.className!]: !!prefix?.className })}>
-              {typeof prefixIcon === 'string' && prefixIcon in icons ? <Icon name={prefixIcon as keyof typeof icons} /> : prefixIcon}
+            <span ref={prefixRef} data-testid="prefix"
+                  className={classNames(styles.prefix, { [prefix!.className!]: !!prefix?.className })}>
+              {typeof prefixIcon === 'string' && prefixIcon in icons ?
+                <Icon name={prefixIcon as keyof typeof icons}/> : prefixIcon}
             </span>
           )}
 
@@ -100,7 +102,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
                 [suffix!.className!]: !!suffix?.className
               })}
             >
-              {icons[suffix.as as keyof typeof icons] ? <Icon name={suffix.as as keyof typeof icons} /> : suffix.as}
+              {icons[suffix.as as keyof typeof icons] ? <Icon name={suffix.as as keyof typeof icons}/> : suffix.as}
             </span>
           )}
         </>

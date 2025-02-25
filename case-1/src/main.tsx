@@ -4,11 +4,13 @@ import '@design-system/foundations/foundations.scss'
 import './styles/main.scss'
 import App from './App.tsx'
 import { BrowserRouter } from "react-router";
+import { ToastContainer } from "@design-system/toast";
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <App />
+      <ToastContainer />
     </BrowserRouter>
   </StrictMode>,
 )

@@ -1,5 +1,5 @@
 import { BannerProps } from './types'
-import { icons } from '@design-system/icon/icons'
+import { icons } from '@design-system/icon/icons.tsx'
 
 export const ICONS_BY_TYPE: { [key in NonNullable<BannerProps['type']>]: keyof typeof icons } = {
   informative: 'info',

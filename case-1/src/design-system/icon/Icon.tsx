@@ -1,5 +1,5 @@
 import { IconProps } from './types.ts'
-import { icons } from './icons.ts'
+import { icons } from '@design-system/icon/icons.tsx'
 
 const Icon = ({ name, size = 24, ...props }: IconProps) => {
   return (
