@@ -1,0 +1,12 @@
+// Managed in lib/constants/breakpoints.ts as well
+$breakpointMobile: 600px;
+$breakpointTablet: 900px;
+$breakpointDesktop: 1200px;
+$breakpointDesktopLarge: 1600px;
+
+:root {
+  --breakpoint-mobile: #{$breakpointMobile};
+  --breakpoint-tablet: #{$breakpointTablet};
+  --breakpoint-desktop: #{$breakpointDesktop};
+  --breakpoint-desktop-large: #{$breakpointDesktopLarge};
+}

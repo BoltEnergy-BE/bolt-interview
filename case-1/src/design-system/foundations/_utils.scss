@@ -1,0 +1,14 @@
+.truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.grid-col-full {
+  grid-column: 1 / -1 !important;
+}
+
+// Primarily used by drawer/modal components which will apply this class to the body element to prevent scrolling
+.no-scroll {
+  overflow: hidden;
+}

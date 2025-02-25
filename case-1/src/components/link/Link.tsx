@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import { TextLink as DSTextLink } from '@boltenergy-be/design-system'
+import { TextLink as DSTextLink } from '@design-system/text-link'
 import { TextLinkProps } from './types'
 import { Link as ReactRouterLink } from 'react-router'
 

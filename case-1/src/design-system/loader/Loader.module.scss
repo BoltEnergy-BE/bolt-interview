@@ -1,0 +1,16 @@
+.svg {
+	stroke-dasharray: 100;
+	animation: loaderDashAnimation 1.75s ease-in-out reverse infinite;
+}
+
+@keyframes loaderDashAnimation {
+	0% {
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dashoffset: 100;
+	}
+	100% {
+		stroke-dashoffset: 200;
+	}
+}

@@ -1,0 +1,208 @@
+@use '../../foundations/breakpoints' as *;
+
+.form-field-layout {
+  --layout-gap: var(--spacing-200);
+
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'input input';
+
+  &:has(.label) {
+    grid-template-areas:
+      'label label'
+      'input input';
+  }
+
+  // Has component slot, no description
+  &:has(.component-slot) {
+    grid-template-areas:
+      'label slot'
+      'input input';
+  }
+
+  // Has description, no component slot
+  &:has(.description) {
+    grid-template-areas:
+      'label label'
+      'description description'
+      'input input';
+  }
+
+  // Has both description and component slot
+  &:has(.description ~ .component-slot) {
+    grid-template-areas:
+      'label slot'
+      'description description'
+      'input input';
+  }
+
+  &:has(.label) {
+    > .input-layout, > .input-list {
+      margin-top: var(--layout-gap);
+    }
+  }
+}
+
+.input-list {
+  grid-area: input;
+  padding: 0;
+  list-style: none;
+}
+
+.description {
+  grid-area: description;
+  color: var(--text-subdued);
+}
+
+.component-slot {
+  grid-area: slot;
+  margin-left: var(--layout-gap);
+}
+
+.input {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-300);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--ds-text-field-border-color, var(--border-default));
+  background: var(--ds-text-field-bg-color, var(--bg-layer));
+  min-height: 56px;
+  transition: outline 0.1s ease-in-out 0.1s,
+  outline-offset 0.1s ease-in-out,
+  background 0.2s ease-in-out,
+  color 0.2s ease-in-out;
+  font-size: var(--text-md-font-size);
+  line-height: var(--text-md-line-height);
+  color: var(--ds-text-field-text-color, var(--text-default));
+
+  @media (width >= $breakpointTablet) {
+    padding: var(--spacing-400);
+  }
+
+  &[hidden] {
+    display: none;
+  }
+
+  &::placeholder {
+    color: var(--text-disabled);
+  }
+
+  &[type='search']::-webkit-search-cancel-button {
+    display: none;
+  }
+
+  &:focus {
+    outline-offset: 2px;
+    outline: 3px solid var(--ds-text-field-outline-color, var(--border-focus-ring));
+  }
+
+  &:is(select) {
+    appearance: none;
+    cursor: pointer;
+  }
+
+  &:is(textarea) {
+    padding: var(--spacing-300) var(--spacing-400);
+    width: 100%;
+    min-height: 96px;
+    resize: vertical;
+  }
+}
+
+.input-layout {
+  grid-area: input;
+  position: relative;
+
+  &.readonly {
+    border: none;
+    padding: 0;
+
+    svg {
+      display: none;
+    }
+  }
+
+  &:not(.errored) {
+    .input:hover {
+      border-color: var(--border-contrast);
+    }
+  }
+
+  // Validation
+  &.disabled {
+    --ds-text-field-border-color: var(--border-subdued);
+    --ds-text-field-bg-color: var(--bg-disabled);
+    --ds-text-field-text-color: var(--text-disabled);
+
+    &,
+    * {
+      cursor: not-allowed;
+    }
+  }
+
+  &.errored {
+    --ds-text-field-text-color: var(--text-negative);
+    --ds-text-field-border-color: var(--text-negative);
+    --ds-text-field-outline-color: color-mix(in srgb, var(--text-negative) 50%, transparent);
+  }
+}
+
+.prefix,
+.suffix {
+  padding: var(--spacing-400);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-md-font-size);
+  line-height: 1;
+  color: var(--ds-text-field-text-color, var(--text-disabled));
+  user-select: none;
+
+  &:not(:has(button)) {
+    pointer-events: none;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.prefix {
+  left: 0;
+  padding-right: var(--spacing-300);
+}
+
+.suffix {
+  right: 0;
+
+  &.action-suffix {
+    pointer-events: auto;
+
+    svg {
+      color: var(--text-subdued);
+    }
+  }
+}
+
+.input-layout.disabled {
+  .action-suffix {
+    svg {
+      color: var(--ds-text-field-text-color, var(--text-disabled));
+    }
+  }
+}
+
+.error-msg {
+  grid-area: error;
+  grid-column: -1 / 1;
+  grid-row: -1;
+  margin-top: var(--layout-gap);
+}

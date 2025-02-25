@@ -1,0 +1,252 @@
+@use "../foundations/breakpoints" as *;
+
+.link, .button {
+  display: inline-flex;
+  gap: var(--spacing-100);
+  flex-wrap: nowrap;
+  align-items: center;
+  position: relative;
+
+  > svg {
+    flex-shrink: 0;
+  }
+
+  &.loading {
+    cursor: wait;
+
+    > *:not(.loader) {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  .loader {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .text {
+    margin: 0 var(--spacing-100);
+  }
+}
+
+.link {
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  color: var(--ds-label-color);
+  font-size: var(--ds-label-font-size);
+  line-height: var(--ds-label-line-height);
+  font-weight: 600;
+  transition: color .2s ease-in-out;
+  padding: 0;
+  margin: 0;
+
+  svg {
+    width: 1.1em;
+    height: 1.1em;
+  }
+
+  // disabled
+  &.disabled,
+  &[disabled] {
+    --ds-label-color: var(--bg-disabled) !important;
+    --ds-label-color-hover: var(--bg-disabled) !important;
+    --ds-label-color-pressed: var(--bg-disabled) !important;
+    cursor: not-allowed;
+  }
+
+  // Interaction
+  &:focus-visible,
+  &:hover {
+    color: var(--ds-label-color-hover);
+  }
+
+  &:active {
+    color: var(--ds-label-color-pressed);
+  }
+}
+
+.button {
+  // reset
+  appearance: none;
+  text-decoration: none;
+
+  // layout
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: var(--ds-button-width, fit-content);
+
+  // boxing
+  outline: 0 solid transparent;
+  outline-offset: 0;
+  border-radius: var(--radius-md);
+  padding: var(--ds-button-padding, 0);
+  border: 1px solid var(--ds-button-border-color, var(--ds-button-bg));
+
+  // colors
+  background: var(--ds-button-bg);
+  color: var(--ds-button-color);
+
+  // Typography
+  font-weight: 600;
+  font-size: var(--ds-button-font-size);
+  line-height: var(--ds-button-line-height);
+
+  // Animation
+  transition:
+          outline .1s ease-in-out .1s,
+          outline-offset .1s ease-in-out,
+          background .2s ease-in-out,
+          border .2s ease-in-out,
+          color .2s ease-in-out;
+
+  // interaction
+  cursor: pointer;
+  user-select: none;
+
+  &.fullwidth,
+  &.fullwidth-mobile {
+    --ds-button-width: 100%;
+  }
+
+  &.fullwidth-mobile {
+    @media screen and (min-width: $breakpointMobile) {
+      --ds-button-width: auto;
+    }
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    outline: 3px solid var(--border-focus-ring);
+  }
+
+  &:hover {
+    background: var(--ds-button-bg-hover);
+    border: 1px solid var(--ds-button-border-color, var(--ds-button-bg-hover));
+  }
+
+  &.active,
+  &:active,
+  &[aria-selected="true"] {
+    background: var(--ds-button-bg-pressed);
+    border: 1px solid var(--ds-button-border-color, var(--ds-button-bg-pressed));
+  }
+
+  // disabled
+  &.disabled,
+  &[disabled] {
+    --ds-button-bg: transparent !important;
+    --ds-button-bg-hover: transparent !important;
+    --ds-button-bg-pressed: transparent !important;
+    --ds-button-color: var(--text-disabled) !important;
+    --ds-button-border-color: var(--border-subdued) !important;
+
+    &:not(.loading) {
+      cursor: not-allowed;
+    }
+  }
+
+  .text {
+    display: flex;
+  }
+}
+
+// Sizes
+.small {
+  --ds-button-padding: var(--spacing-200);
+  --ds-button-font-size: var(--text-sm-font-size);
+  --ds-button-line-height: var(--text-sm-line-height);
+
+  --ds-label-font-size: var(--text-sm-font-size);
+  --ds-label-line-height: var(--text-sm-line-height);
+}
+
+.medium {
+  --ds-button-padding: var(--spacing-300);
+  --ds-button-font-size: var(--text-md-font-size);
+  --ds-button-line-height: var(--text-md-line-height);
+
+  --ds-label-font-size: var(--text-md-font-size);
+  --ds-label-line-height: var(--text-md-line-height);
+}
+
+.large {
+  --ds-button-padding: var(--spacing-400);
+  --ds-button-font-size: var(--text-md-font-size);
+  --ds-button-line-height: var(--text-md-line-height);
+
+  --ds-label-font-size: var(--text-md-font-size);
+  --ds-label-line-height: var(--heading-md-line-height);
+}
+
+// Variants
+.primary {
+  --ds-button-bg: var(--bg-primary);
+  --ds-button-color: var(--text-default);
+  --ds-button-bg-hover: var(--bg-primary-hover);
+  --ds-button-bg-pressed: var(--bg-primary-pressed);
+
+  --ds-label-color: var(--text-primary);
+  --ds-label-color-hover: var(--text-primary-hover);
+  --ds-label-color-pressed: var(--text-primary-pressed);
+}
+
+.secondary {
+  --ds-button-color: var(--text-default);
+  --ds-button-bg: var(--bg-secondary);
+  --ds-button-bg-hover: var(--bg-secondary-hover);
+  --ds-button-bg-pressed: var(--bg-secondary-pressed);
+  --ds-button-border-color: transparent;
+
+  --ds-label-color: var(--text-default);
+  --ds-label-color-hover: var(--text-default-hover);
+  --ds-label-color-pressed: var(--text-default-pressed);
+}
+
+.tertiary {
+  --ds-button-bg: transparent;
+  --ds-button-color: var(--text-default);
+  --ds-button-bg-hover: var(--bg-secondary-hover);
+  --ds-button-bg-pressed: var(--bg-secondary-pressed);
+  --ds-button-border-color: transparent;
+
+  --ds-label-color: var(--text-subdued);
+  --ds-label-color-hover: var(--text-subdued-hover);
+  --ds-label-color-pressed: var(--text-subdued-pressed);
+
+  &:is(button) {
+    text-decoration: underline;
+  }
+}
+
+.layered {
+  --ds-button-bg: var(--bg-layer);
+  --ds-button-color: var(--on-primary);
+  --ds-button-bg-hover: linear-gradient(0deg, var(--bg-layer-hover) 0%, var(--bg-layer-hover) 100%), var(--bg-layer);
+  --ds-button-bg-pressed: linear-gradient(0deg, var(--bg-secondary-pressed) 0%, var(--bg-secondary-pressed) 100%), var(--bg-layer);
+  --ds-button-border-color: var(--border-default);
+  box-shadow: var(--shadow-sm);
+}
+
+// Destructive ButtonVariant
+.destructive {
+  --ds-button-bg: var(--bg-critical);
+  --ds-button-color: var(--on-critical);
+  --ds-button-bg-hover: var(--bg-critical-hover);
+  --ds-button-bg-pressed: var(--bg-critical-pressed);
+
+  &.secondary,
+  &.secondary-on-accent,
+  &.tertiary {
+    --ds-button-bg: var(--bg-negative);
+    --ds-button-color: var(--text-negative);
+    --ds-button-bg-hover: var(--bg-negative-hover);
+    --ds-button-bg-pressed: var(--bg-negative-pressed);
+  }
+}

@@ -1,6 +1,6 @@
-import { Heading } from "@boltenergy-be/design-system";
-import { ROUTES } from "../../constants/routes.ts";
-import Link from "../../components/link/Link.tsx";
+import { Heading } from "@design-system/heading";
+import { ROUTES } from "constants/routes.ts";
+import Link from "components/link/Link.tsx";
 import styles from './Home.module.scss';
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
       <nav className={styles.navigation}>
         <ul>
           <li>
-            <Link href={ROUTES.origin}>Original form</Link>
+            <Link href={ROUTES.origin}>Original</Link>
           </li>
         </ul>
       </nav>

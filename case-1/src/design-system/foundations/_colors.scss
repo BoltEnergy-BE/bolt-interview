@@ -1,0 +1,300 @@
+:root {
+  /* ------------- */
+  /* PRIMITIVES */
+  /* ------------- */
+
+  /**
+  * @tokens Colors
+  * @presenter Color
+  */
+  --black: #000000;
+  --white: #ffffff;
+
+  // Comments are the beige variant of the color for the rebranding
+  --neutral-100: #FCFCEB;
+  --neutral-200: #F7F7DC;
+  --neutral-300: #EBEACD;
+  --neutral-400: #B5B49E;
+  --neutral-500: #848375;
+  --neutral-600: #56554D;
+  --neutral-700: #353531;
+  --neutral-800: #232322;
+  --neutral-900: #1B1B1B;
+
+  --neutral-10: color-mix(in srgb, var(--neutral-600) 10%, transparent);
+  --neutral-20: color-mix(in srgb, var(--neutral-600) 20%, transparent);
+  --neutral-30: color-mix(in srgb, var(--neutral-600) 30%, transparent);
+  --neutral-40: color-mix(in srgb, var(--neutral-600) 40%, transparent);
+  --neutral-50: color-mix(in srgb, var(--neutral-600) 50%, transparent);
+  --neutral-60: color-mix(in srgb, var(--neutral-600) 60%, transparent);
+  --neutral-70: color-mix(in srgb, var(--neutral-600) 70%, transparent);
+  --neutral-80: color-mix(in srgb, var(--neutral-600) 80%, transparent);
+  --neutral-90: color-mix(in srgb, var(--neutral-600) 90%, transparent);
+
+  --blue-100: #f8f7fb;
+  --blue-200: #edebf5;
+  --blue-300: #dad9e2;
+  --blue-400: #c4c2d1;
+  --blue-500: #a29fb5;
+  --blue-600: #665f85;
+  --blue-700: #3d3278;
+  --blue-800: #100061;
+  --blue-900: #0b052e;
+
+  --green-100: #edfaf7;
+  --green-200: #d3f7ef;
+  --green-300: #b4f0e2;
+  --green-400: #7bedd4;
+  --green-500: #23d5ae;
+  --green-600: #1fbd9a;
+  --green-700: #009e7b;
+  --green-800: #008568;
+  --green-900: #005c48;
+
+  --yellow-100: #fffceb;
+  --yellow-200: #fff9d1;
+  --yellow-300: #fff4b0;
+  --yellow-400: #ffee7d;
+  --yellow-500: #f6df48;
+  --yellow-600: #f7ce00;
+  --yellow-700: #e0af00;
+  --yellow-800: #ad8700;
+  --yellow-900: #826200;
+
+  --orange-100: #fff5e5;
+  --orange-200: #ffeccf;
+  --orange-300: #ffdaa1;
+  --orange-400: #ffbe5c;
+  --orange-500: #ffa010;
+  --orange-600: #fa8900;
+  --orange-700: #de7a00;
+  --orange-800: #bf6900;
+  --orange-900: #874a00;
+
+  --red-100: #fff2f4;
+  --red-200: #ffe3e6;
+  --red-300: #fabbc2;
+  --red-400: #ff7586;
+  --red-500: #ff4057;
+  --red-600: #e5223a;
+  --red-700: #c9031b;
+  --red-800: #a60316;
+  --red-900: #73020f;
+
+  --purple-100: #f7f0ff;
+  --purple-200: #ede0fc;
+  --purple-300: #d8bff5;
+  --purple-400: #c38fff;
+  --purple-500: #a564f0;
+  --purple-600: #945ad6;
+  --purple-700: #804eba;
+  --purple-800: #694099;
+  --purple-900: #462b66;
+
+  --pink-100: #fff5fe;
+  --pink-200: #ffe8fc;
+  --pink-300: #ffd4f9;
+  --pink-400: #ffb8f6;
+  --pink-500: #ff94f2;
+  --pink-600: #e57ed9;
+  --pink-700: #cc62bf;
+  --pink-800: #b256a7;
+  --pink-900: #783a70;
+
+  --lightblue-100: #f0f8ff;
+  --lightblue-200: #e1f1ff;
+  --lightblue-300: #c4e4ff;
+  --lightblue-400: #a6d6ff;
+  --lightblue-500: #69baff;
+  --lightblue-600: #4c9fe5;
+  --lightblue-700: #4690cf;
+  --lightblue-800: #3d7cb2;
+  --lightblue-900: #295378;
+
+  /* ------------ */
+  /* COLOR TOKENS */
+  /* ------------ */
+
+  /* BACKGROUND COLORS */
+  --bg-default: var(--neutral-100);
+  --bg-default-hover: var(--neutral-10);
+  --bg-default-pressed: var(--neutral-20);
+
+  --bg-layer: var(--white);
+  --bg-layer-hover: var(--neutral-10);
+  --bg-layer-pressed: var(--neutral-20);
+
+  --bg-primary: var(--green-500);
+  --bg-primary-hover: var(--green-400);
+  --bg-primary-pressed: var(--green-600);
+
+  --bg-primary-accent: var(--blue-800);
+  --bg-primary-accent-hover: var(--blue-700);
+  --bg-primary-accent-pressed: var(--blue-900);
+
+  --bg-secondary: var(--neutral-10);
+  --bg-secondary-hover: var(--neutral-20);
+  --bg-secondary-pressed: var(--neutral-30);
+
+  --bg-critical: var(--red-500);
+  --bg-critical-hover: var(--red-400);
+  --bg-critical-pressed: var(--red-600);
+
+  --bg-negative: var(--red-200);
+  --bg-negative-hover: var(--red-300);
+  --bg-negative-pressed: var(--red-400);
+
+  --bg-warning: var(--orange-200);
+  --bg-warning-hover: var(--orange-200);
+  --bg-warning-pressed: var(--orange-300);
+
+  --bg-positive: var(--green-200);
+  --bg-positive-hover: var(--green-200);
+  --bg-positive-pressed: var(--green-300);
+
+  --bg-informative: var(--lightblue-200);
+  --bg-informative-hover: var(--lightblue-200);
+  --bg-informative-pressed: var(--lightblue-300);
+
+  --bg-disabled: var(--blue-100);
+  --bg-overlay: var(--neutral-40);
+
+  /* ACCENTS */
+  --accent-brand: var(--green-500);
+  --accent-brand-subdued: var(--green-200);
+  --accent-yellow: var(--yellow-500);
+  --accent-yellow-subdued: var(--yellow-200);
+  --accent-orange: var(--orange-500);
+  --accent-orange-subdued: var(--orange-200);
+  --accent-purple: var(--purple-400);
+  --accent-purple-subdued: var(--purple-200);
+  --accent-pink: var(--pink-500);
+  --accent-pink-subdued: var(--pink-200);
+  --accent-lightblue: var(--lightblue-500);
+  --accent-lightblue-subdued: var(--lightblue-200);
+
+  /* TEXT COLORS */
+  --text-default: var(--blue-800);
+  --text-default-hover: var(--blue-700);
+  --text-default-pressed: var(--blue-900);
+
+  --text-subdued: var(--neutral-500);
+  --text-subdued-hover: var(--neutral-400);
+  --text-subdued-pressed: var(--neutral-600);
+
+  --text-primary: var(--green-600);
+  --text-primary-hover: var(--green-500);
+  --text-primary-pressed: var(--green-700);
+
+  --text-disabled: var(--neutral-400);
+
+  --text-negative: var(--red-700);
+  --text-warning: var(--orange-700);
+  --text-positive: var(--green-700);
+  --text-informative: var(--lightblue-700);
+
+  /* TEXT COLORS to be combined with the corresponding background colors*/
+  --on-critical: var(--white);
+  --on-primary: var(--blue-800);
+  --on-secondary: var(--blue-800);
+  --on-accent: var(--blue-800);
+  --on-brand-subdued: var(--green-700);
+  --on-yellow-subdued: var(--yellow-700);
+  --on-orange-subdued: var(--orange-700);
+  --on-purple-subdued: var(--purple-700);
+  --on-pink-subdued: var(--pink-700);
+  --on-lightblue-subdued: var(--lightblue-700);
+
+  /* BORDER COLORS */
+  --border-subdued: var(--neutral-10);
+  --border-default: var(--neutral-20);
+  --border-contrast: var(--neutral-30);
+  --border-high-contrast: var(--blue-800);
+  --border-action: var(--green-600);
+  --border-action-hover: var(--green-500);
+  --border-action-pressed: var(--green-700);
+  --border-focus-ring: color-mix(in srgb, var(--green-600) 50%, transparent);
+
+  /* CHART COLORS */
+  --chart-blue: var(--blue-800);
+  --chart-green: var(--green-500);
+  --chart-yellow: var(--yellow-500);
+  --chart-purple: var(--purple-400);
+  --chart-lightblue: var(--lightblue-500);
+  --chart-orange: var(--orange-500);
+  --chart-pink: var(--pink-500);
+  --chart-grey: var(--neutral-400);
+
+  /* GRADIENTS COLORS */
+  --gradient-green: linear-gradient(to right, var(--green-500), var(--green-400));
+  --gradient-blue: linear-gradient(to right, var(--blue-700), var(--blue-800));
+}
+
+/**
+* @tokens-end
+*/
+
+// Utility classes for text colors
+$textColors: (
+        default: var(--text-default),
+        default-hover: var(--text-default-hover),
+        default-pressed: var(--text-default-pressed),
+        subdued: var(--text-subdued),
+        subdued-hover: var(--text-subdued-hover),
+        subdued-pressed: var(--text-subdued-pressed),
+        primary: var(--text-primary),
+        primary-hover: var(--text-primary-hover),
+        primary-pressed: var(--text-primary-pressed),
+        disabled: var(--text-disabled),
+        negative: var(--text-negative),
+        warning: var(--text-warning),
+        positive: var(--text-positive),
+        informative: var(--text-informative),
+        accent-brand: var(--accent-brand),
+        accent-yellow: var(--accent-yellow),
+        accent-orange: var(--accent-orange),
+        accent-purple: var(--accent-purple),
+        accent-pink: var(--accent-pink),
+        accent-lightblue: var(--accent-lightblue)
+);
+
+@each $color, $value in $textColors {
+  .text-#{"" + $color} {
+    color: $value !important; // Utility classes use important to overwrite applied CSS
+  }
+}
+
+// Utility classes for bg colors
+$Colors: (
+        // Backgrounds
+        default: var(--bg-default),
+        layer: var(--bg-layer),
+        primary: var(--bg-primary),
+        secondary: var(--bg-secondary),
+        critical: var(--bg-critical),
+        negative: var(--bg-negative),
+        warning: var(--bg-warning),
+        positive: var(--bg-positive),
+        informative: var(--bg-informative),
+        disabled: var(--bg-disabled),
+
+        // Accents
+        brand: var(--accent-brand),
+        brand-subdued: var(--accent-brand-subdued),
+        yellow: var(--accent-yellow),
+        yellow-subdued: var(--accent-yellow-subdued),
+        orange: var(--accent-orange),
+        orange-subdued: var(--accent-orange-subdued),
+        purple: var(--accent-purple),
+        purple-subdued: var(--accent-purple-subdued),
+        pink: var(--accent-pink),
+        pink-subdued: var(--accent-pink-subdued),
+        lightblue: var(--accent-lightblue),
+        lightblue-subdued: var(--accent-lightblue-subdued)
+);
+
+@each $color, $value in $Colors {
+  .bg-#{"" + $color} { // "" + $color is to disable a sass warning
+    background-color: $value !important; // Utility classes use important to overwrite applied CSS
+  }
+}

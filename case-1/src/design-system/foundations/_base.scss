@@ -1,0 +1,128 @@
+body {
+  color: var(--text-default);
+  font-size: var(--text-md-font-size);
+  line-height: var(--text-md-line-height);
+  font-family: var(--font-family);
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  border: none;
+  background-color: var(--border-subdued);
+}
+
+// Lists
+
+ul, menu {
+  list-style: none;
+  padding-left: 0;
+}
+
+// Headings
+
+h1,
+.h1 {
+  font-weight: normal;
+  font-size: var(--heading-xl-font-size);
+  line-height: var(--heading-xl-line-height);
+  text-wrap: balance;
+}
+
+h2,
+.h2 {
+  font-weight: normal;
+  font-size: var(--heading-lg-font-size);
+  line-height: var(--heading-lg-line-height);
+  text-wrap: balance;
+}
+
+h3,
+.h3 {
+  font-weight: normal;
+  font-size: var(--heading-md-font-size);
+  line-height: var(--heading-md-line-height);
+  text-wrap: balance;
+}
+
+h4,
+.h4 {
+  font-weight: bold;
+  font-size: var(--heading-sm-font-size);
+  line-height: var(--heading-sm-line-height);
+}
+
+h5,
+.h5 {
+  font-weight: bold;
+  font-size: var(--heading-xs-font-size);
+  line-height: var(--heading-xs-line-height);
+}
+
+h6,
+.h6 {
+  font-weight: bold;
+  font-size: var(--heading-xxs-font-size);
+  line-height: var(--heading-xxs-line-height);
+}
+
+// Body text
+
+.text-xl {
+  font-size: var(--text-xl-font-size);
+  line-height: var(--text-xl-line-height);
+}
+
+.text-lg {
+  font-size: var(--text-lg-font-size);
+  line-height: var(--text-lg-line-height);
+}
+
+.text-md {
+  font-size: var(--text-md-font-size);
+  line-height: var(--text-md-line-height);
+}
+
+.text-sm {
+  font-size: var(--text-sm-font-size);
+  line-height: var(--text-sm-line-height);
+}
+
+.text-xs {
+  font-size: var(--text-xs-font-size);
+  line-height: var(--text-xs-line-height);
+}
+
+button,
+p,
+strong {
+  @extend .text-md;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+a, button {
+  cursor: pointer;
+  text-underline-offset: .4em; // use em's for scaling by font-size
+}
+
+p > a {
+  text-underline-offset: .2em; // use em's for scaling by font-size
+}
+
+small {
+  @extend .text-sm;
+}
+
+// Forms
+
+fieldset {
+  border: none;
+  padding: 0;
+
+  legend {
+  }
+}

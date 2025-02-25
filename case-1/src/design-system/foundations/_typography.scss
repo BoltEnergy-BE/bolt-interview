@@ -1,0 +1,116 @@
+@use 'breakpoints' as *;
+
+:root {
+  /**
+  * @tokens FontFamily
+  * @presenter FontFamily
+  */
+  --font-family: 'Commuters Sans', sans-serif; // TODO: Add & load font
+
+  /**
+  * @tokens FontSize
+  * @presenter FontSize
+  */
+  --heading-xl-font-size: 32px; // h1
+  --heading-lg-font-size: 26px; // h2
+  --heading-md-font-size: 24px; // h3
+  --heading-sm-font-size: 20px; // h4
+  --heading-xs-font-size: 18px; // h5
+  --heading-xxs-font-size: 16px; // h6
+
+  /**
+  * @tokens LineHeight
+  * @presenter LineHeight
+  */
+  --heading-xl-line-height: 40px; // h1
+  --heading-lg-line-height: 32px; // h2
+  --heading-md-line-height: 28px; // h3
+  --heading-sm-line-height: 26px; // h4
+  --heading-xs-line-height: 22px; // h5
+  --heading-xxs-line-height: 20px; // h6
+
+  // Body text
+
+  /**
+  * @tokens FontSize
+  * @presenter FontSize
+  */
+  --text-xl-font-size: 18px;
+  --text-lg-font-size: 16px;
+  --text-md-font-size: 16px;
+  --text-sm-font-size: 14px;
+  --text-xs-font-size: 13px;
+
+  /**
+  * @tokens LineHeight
+  * @presenter LineHeight
+  */
+  --text-xl-line-height: 28px;
+  --text-lg-line-height: 24px;
+  --text-md-line-height: 24px;
+  --text-sm-line-height: 22px;
+  --text-xs-line-height: 20px;
+
+  /**
+ * @tokens Font
+ */
+  --heading-xl: bold var(--heading-xl-font-size) / var(--heading-xl-line-height) var(--font-family); // h1
+  --heading-lg: bold var(--heading-lg-font-size) / var(--heading-lg-line-height) var(--font-family); // h2
+  --heading-md: bold var(--heading-md-font-size) / var(--heading-md-line-height) var(--font-family); // h3
+  --heading-sm: bold var(--heading-sm-font-size) / var(--heading-sm-line-height) var(--font-family); // h4
+  --heading-xs: bold var(--heading-xs-font-size) / var(--heading-xs-line-height) var(--font-family); // h5
+  --heading-xxs: bold var(--heading-xxs-font-size) / var(--heading-xxs-line-height) var(--font-family); // h6
+
+  /**
+  * @tokens Font
+  */
+  --text-xl: var(--text-xl-font-size) / var(--text-xl-line-height) var(--font-family); // h1
+  --text-lg: var(--text-lg-font-size) / var(--text-lg-line-height) var(--font-family); // h2
+  --text-md: var(--text-md-font-size) / var(--text-md-line-height) var(--font-family); // h3
+  --text-sm: var(--text-sm-font-size) / var(--text-sm-line-height) var(--font-family); // h4
+  --text-xs: var(--text-xs-font-size) / var(--text-xs-line-height) var(--font-family); // h5
+
+  @media ($breakpointTablet <= width) {
+    /**
+    * @tokens FontSize
+    * @presenter FontSize
+    */
+    --heading-xl-font-size: 48px; // h1
+    --heading-lg-font-size: 36px; // h2
+    --heading-md-font-size: 28px; // h3
+    --heading-sm-font-size: 24px; // h4
+    --heading-xs-font-size: 20px; // h5
+    --heading-xxs-font-size: 16px; // h6
+
+    /**
+    * @tokens LineHeight
+    * @presenter LineHeight
+    */
+    --heading-xl-line-height: 52px; /* H1 - laptop/desktop */
+    --heading-lg-line-height: 42px; // h2
+    --heading-md-line-height: 36px; // h3
+    --heading-sm-line-height: 30px; // h4
+    --heading-xs-line-height: 24px; // h5
+    --heading-xxs-line-height: 20px; // h6
+
+    /**
+   * @tokens FontSize
+   * @presenter FontSize
+   */
+    --text-xl-font-size: 20px;
+    --text-lg-font-size: 18px;
+    --text-md-font-size: 16px;
+    --text-sm-font-size: 14px;
+    --text-xs-font-size: 13px;
+
+    /**
+    * @tokens LineHeight
+    * @presenter LineHeight
+    */
+    --text-xl-line-height: 32px;
+    --text-lg-line-height: 30px;
+    --text-md-line-height: 24px;
+    --text-sm-line-height: 20px;
+    --text-xs-line-height: 20px;
+  }
+}

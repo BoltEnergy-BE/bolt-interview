@@ -1,0 +1,19 @@
+@use "../../foundations/breakpoints" as *;
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-500);
+
+  @media (width >= $breakpointTablet) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  > div, > fieldset {
+    grid-column: span 2;
+  }
+
+  .form-footer {
+    grid-column: -1 / 1;
+  }
+}

@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router";
 import { ROUTES } from "./constants/routes.ts";
 import Origin from "./pages/origin/Origin.tsx";
-import Home from "./pages/index/Home.tsx";
+import Home from "pages/home/Home.tsx";
 
 function App() {
   return (

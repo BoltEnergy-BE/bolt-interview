@@ -1,0 +1,176 @@
+@use 'breakpoints' as *;
+
+:root {
+  /**
+  * @tokens Spacing
+  * @presenter Spacing
+  */
+  --spacing-100: 4px;
+  --spacing-200: 8px;
+  --spacing-300: 12px;
+  --spacing-400: 16px;
+  --spacing-500: 24px;
+  --spacing-600: 40px;
+  --spacing-700: 64px;
+  --spacing-800: 80px;
+  --spacing-900: 120px;
+}
+
+/**
+* @tokens-end
+*/
+
+// Utility classes for spacing
+
+$spacing: (
+        auto: auto,
+        none: 0,
+        100: var(--spacing-100),
+        200: var(--spacing-200),
+        300: var(--spacing-300),
+        400: var(--spacing-400),
+        500: var(--spacing-500),
+        600: var(--spacing-600),
+        700: var(--spacing-700),
+        800: var(--spacing-800),
+        900: var(--spacing-900)
+);
+
+@mixin margin-and-padding-helpers($space, $distance, $device) {
+  // Paddings
+  .#{$device}:p-#{$space} {
+    padding: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:px-#{$space} {
+    padding-left: $distance !important; // Utility classes use important to overwrite applied CSS
+    padding-right: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:py-#{$space} {
+    padding-top: $distance !important; // Utility classes use important to overwrite applied CSS
+    padding-bottom: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:pt-#{$space} {
+    padding-top: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:pb-#{$space} {
+    padding-right: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:pl-#{$space} {
+    padding-left: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:pr-#{$space} {
+    padding-right: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+
+  // Margins
+  .#{$device}:m-#{$space} {
+    margin: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:mx-#{$space} {
+    margin-left: $distance !important; // Utility classes use important to overwrite applied CSS
+    margin-right: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:my-#{$space} {
+    margin-top: $distance !important; // Utility classes use important to overwrite applied CSS
+    margin-bottom: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:mt-#{$space} {
+    margin-top: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:mb-#{$space} {
+    margin-bottom: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:ml-#{$space} {
+    margin-left: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:mr-#{$space} {
+    margin-right: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+
+  // Gap
+  .#{$device}:gap-#{$space} {
+    gap: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:row-gap-#{$space} {
+    row-gap: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .#{$device}:col-gap-#{$space} {
+    column-gap: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+}
+
+@each $space, $distance in $spacing {
+  // Paddings
+  .p-#{$space} {
+    padding: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .px-#{$space} {
+    padding-left: $distance !important; // Utility classes use important to overwrite applied CSS
+    padding-right: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .py-#{$space} {
+    padding-top: $distance !important; // Utility classes use important to overwrite applied CSS
+    padding-bottom: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .pl-#{$space} {
+    padding-left: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .pr-#{$space} {
+    padding-right: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .pt-#{$space} {
+    padding-top: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .pb-#{$space} {
+    padding-bottom: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+
+  // Margins
+  .m-#{$space} {
+    margin: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .mx-#{$space} {
+    margin-left: $distance !important; // Utility classes use important to overwrite applied CSS
+    margin-right: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .my-#{$space} {
+    margin-top: $distance !important; // Utility classes use important to overwrite applied CSS
+    margin-bottom: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .mt-#{$space} {
+    margin-top: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .mb-#{$space} {
+    margin-bottom: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .ml-#{$space} {
+    margin-left: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .mr-#{$space} {
+    margin-right: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+
+  // Gap
+  .gap-#{$space} {
+    gap: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .row-gap-#{$space} {
+    row-gap: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+  .col-gap-#{$space} {
+    column-gap: $distance !important; // Utility classes use important to overwrite applied CSS
+  }
+
+  @media screen and (width >= $breakpointMobile) {
+    @include margin-and-padding-helpers($space, $distance, mobile);
+  }
+  @media screen and (width >= $breakpointTablet) {
+    @include margin-and-padding-helpers($space, $distance, tablet);
+  }
+  @media screen and (width >= $breakpointDesktop) {
+    @include margin-and-padding-helpers($space, $distance, desktop);
+  }
+  @media screen and (width >= $breakpointDesktopLarge) {
+    @include margin-and-padding-helpers($space, $distance, desktop-l);
+  }
+}
