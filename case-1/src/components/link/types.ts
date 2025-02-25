@@ -1,5 +1,5 @@
-import { TextLinkProps as DSTextLinkProps } from '@boltenergy-be/design-system/dist/components/text-link/types'
-import { LinkProps } from 'react-router-dom'
+import { TextLinkProps as DSTextLinkProps } from '@design-system/text-link/types'
+import { LinkProps } from 'react-router'
 
 export type TextLinkProps = Omit<DSTextLinkProps, 'cloneElement'> &
   (
