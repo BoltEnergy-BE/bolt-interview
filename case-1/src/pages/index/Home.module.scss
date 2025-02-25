@@ -1,0 +1,16 @@
+.main {
+  text-align: center;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
