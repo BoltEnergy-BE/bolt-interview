@@ -1,2 +1,2 @@
 # bolt-interview
-A list of cases for bolt interviews
+Fork this repository and complete the requested case. It is not important to finish it, but show us how you think and how you work.
