@@ -5,8 +5,16 @@
 3. Save the form values in a state.
 4. Validate the form before submission and show the error for each invalid field. (DS components have an error prop)
    - All fields are required.
-   - Email should be the correct pattern. (You can use EMAIL_REGEX from the constants folder)
+   - Email should be the correct pattern. (You can use `EMAIL_REGEX` from the constants folder)
 5. Add a loading state when submitting the form. (Button component has a prop for the visual confirmation)
 6. Pop a success or error message using The Toast component. ([documentation](https://rebranding.design-system.boltenergie.be/?path=/docs/components-toast--docs))
 7. Optimize where you think it is needed or necessary.
+
+
+## Result
+As a layout goal, you can aim to achieve the layout below. Most of it can be achieved by using design system components. *Small tip: The `Card` component has a built in image prop to achieve the image on the right.*
+
+For sizes you can use the `--spacing-*` CSS variables from the design system.
+
+![result](./public/result.png)
 
